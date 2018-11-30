@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹性盒模型demo1</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            border: 1px solid red;
+        }
+
+        .demo1 {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .block {
+            width: 30px;
+            height: 30px;
+            background: yellow;
+        }
+
+        .demo2 {
+            display: flex;
+            flex-direction: column-reverse;
+            flex-wrap: wrap-reverse;
+        }
+
+        .demo3 {
+            display: flex;
+            flex-flow: row wrap-reverse;
+
+        }
+
+        .demo4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .demo5 {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .demo6 {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: space-around;
+            align-content: space-around;
+        }
+        .demo7 {
+            display: flex;
+        }
+        .demo8 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .demo8 span{
+            border: 1px solid green;
+        }
+        .demo9{
+            display: flex;
+        }
+        .demo9 span{
+            border: 1px solid green;
+        }
+        .demo10{
+            display: flex;
+        }
+        .demo10 span{
+            border: 1px solid green;
+        }
+        .demo11{
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            justify-content:flex-end;
+        }
+        .demo11 span{
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>六大主要属性(设置在容器上）</h1>
+    <p>1.flex-direction <span>决定主轴方向（及项目的排列方向）</span></p>
+    <p>
+        <ul>
+            <li>row（默认值）：主轴为水平方向，起点在左端。</li>
+            <li>row-reverse：主轴为水平方向，起点在右端。</li>
+            <li>column：主轴为垂直方向，起点在上沿。</li>
+            <li>column-reverse：主轴为垂直方向，起点在下沿</li>
+        </ul>
+    </p>
+    <title>demo1</title>
+    <div class="demo1">
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+    </div>
+    <p>2.flex-warp(轴线）<span>默认情况下，项目都排在一条线上，如果一条线排不下，如何换行</span></p>
+    <p>
+        <ul>
+            <li>nowarp（默认）:不换行</li>
+            <li>warp:换行，第一行在上面</li>
+            <li>warp-reverse:换行，第一行在下面</li>
+        </ul>
+    </p>
+    <title>demo2</title>
+    <div class="demo2">
+        <span class="block">111</span>
+        <span class="block">2</span>
+        <span class="block">333</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+    </div>
+    <p>3.flex-flow<span>是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</span></p>
+    <p>
+        <ul>
+            <li>flex-flow: <flex-direction>
+                    <flex-wrap>;</li>
+        </ul>
+    </p>
+    <title>demo3</title>
+    <div class="demo3">
+        <span class="block">111</span>
+        <span class="block">2</span>
+        <span class="block">333</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+        <span class="block">1</span>
+        <span class="block">2</span>
+        <span class="block">3</span>
+    </div>
+    <p>4.justify-content<span>定义了项目在主轴上的对齐方式</span></p>
+    <p>
+        <ul>
+            <li>flex-start（默认值）：左对齐</li>
+            <li> flex-end：右对齐</li>
+            <li> center： 居中</li>
+            <li> space-between：两端对齐，项目之间的间隔都相等。</li>
+            <li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</li>
+        </ul>
+    </p>
+    <title>demo4</title>
+    <div class="demo4">
+        <span class="block">111</span>
+    </div>
+    <p>5.align-items<span>定义了项目在交叉轴上的对齐方式</span></p>
+    <p>
+        <ul>
+            <li>flex-start：交叉轴的起点对齐</li>
+            <li> flex-end：交叉轴的终点对齐。</li>
+            <li> center： 交叉轴的中点对齐</li>
+            <li> baseline：项目的第一行文字的基线对齐。</li>
+            <li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+        </ul>
+    </p>
+    <title>demo5</title>
+    <div class="demo5">
+        <span class="block">111</span>
+        <span class="block">111</span>
+        <h3 class="block">111</h3>
+    </div>
+    <p>6.align-content<span>定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用</span></p>
+    <p>
+        <ul>
+            <li>flex-start：与交叉轴的起点对齐。</li>
+            <li>flex-end：与交叉轴的终点对齐。</li>
+            <li> center：与交叉轴的中点对齐。</li>
+            <li> space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+            <li> space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+            <li> stretch（默认值）：轴线占满整个交叉轴。</li>
+        </ul>
+    </p>
+    <title>demo6</title>
+    <div class="demo6">
+        <span class="block">111</span>
+        <span class="block">2</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+        <span class="block">33</span>
+    </div>
+    <textarea name="" id="" cols="30" rows="10">
+        注释：此时可以看到item的宽度相加大于container的宽度，容器中flex-wrap属性值是wrap即会造成换行，换行后就会有多个crossAxis轴,这个时候就需要用到align-content，先看看结果。
+    </textarea>
+    <br>
+    <span style="background:gray;">
+        <pre> 总结：
+            1.主要分为横轴（左右）纵轴（上下）,换行（上下换行，下上换行）与不换行；
+            2.对齐方式分为横轴对齐方式，顶、底、中间均匀、全部均匀、居中
+                对齐方式分为单轴线，多轴线
+                单轴线：纵轴对齐方式，顶、底、居中、第一行文字基线对齐、无高度沾满父级高度
+                多轴线：对齐方式，顶、底、中间均匀、全部均匀、居中
+            3.如果默认子元素没有宽高，那么会默认铺满父级元素
+        </pre>
+    </span>
+    <h1>运行在子集项目上的属性</h1>
+    <p>属性1：order 定义项目排列顺序，数值越小，排列越靠前，默认为0</p>
+    <title>demo7</title>
+    <div class="demo7">
+        <span class="block" style="order:10">5</span>
+        <span class="block" style="order:-1">2</span>
+        <span class="block" >3</span>
+        <span class="block" style="order:11">6</span>
+        <span class="block" style="order:0">4</span>
+    </div>
+    <p>属性2：flex-grow 定义项目的放大比例，默认为0，即如果存在剩余空间也不放大 <span></span></p>
+    <title>demo8</title>
+    <div class="demo8">
+        <span class="block" style="flex-grow:2">5</span>
+        <span class="block" style="flex-grow:0">4</span>
+    </div>
+    <p>属性3：flex-shrink 项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<span></span></p>
+    <title>demo9</title>
+    <div class="demo9">
+        <span class="block" style="flex-shrink:2">5</span>
+        <span class="block" style="flex-shrink:1">4</span>
+        <span class="block" style="width: 180px">6</span>
+        <span class="block" style="flex-shrink:1">4</span>
+        <span class="block" style="flex-shrink:3">5</span>
+    </div>
+    <span>如果所有项目的flex-shrink属性都为1，当空间不足时，
+        都将等比例缩小。如果一个项目的flex-shrink属性为0，
+        其他项目都为1，则空间不足时，前者不缩小。
+        负值对该属性无效。 
+    </span>
+    <p>属性4：flex-basis 定义了<span style="color:red">在分配多余空间之前</span>，项目占据的主轴空间（main size）。
+        浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+    <title>demo10</title>
+    <div class="demo10">
+        <span class="block" style="flex-basis:80px;">5</span>
+        <span class="block" style="width: 20px">6</span>
+    </div>
+    <span>
+        用于分配多余空间之前，计算主轴是否有多余空间，如果有就给定义的数值，否做受其他参数影响 
+    </span>
+    <p>属性5：align-self 允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。
+        默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+    <title>demo11</title>
+    <div class="demo11">
+            <span class="block">33</span>
+            <span class="block">33</span>
+            <span class="block">33</span>
+            <span class="block" style="align-self:flex-end">33</span>
+            <span class="block">33</span>
+            <span class="block">33</span>
+            <span class="block">33</span>
+    </div>
+    <span>
+            该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
+            用于单个有差异的项目item元素 
+    </span>
+    <p>属性6：flex 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+        <title>demo11</title>
+        <div class="demo11">
+                <span class="block" style="flex: 1 1 80px">33</span>
+                <span class="block" style="flex: 2 1 auto">33</span>
+                <span class="block" style="flex: 1 1 auto">33</span>
+                <span class="block" style="flex: 1 1 auto">33</span>
+                <span class="block" style="flex: 1 1 auto">33</span>
+                <span class="block" style="flex: 1 1 auto">33</span>
+                <span class="block" style="flex: 1 1 auto">22</span>
+                <span class="block" style="flex: 0 1 auto">33</span>
+        </div>
+    <pre>
+        总结：单个项目包含
+        order排序，默认为0
+        放大：flex-grow默认为0
+        缩小：flex-shrink默认为1，0值为待定不缩小，数值不可为负值
+        相对分配父级空间：flex-basis 在分配父级多余空间之前，进行设定，且设定值要小于等于多余空间值
+        单独定义排列方式:align-self 默认传递父级的align-content 单独设置时，如果没有父级，则铺满
+
+    </pre>
+
+</body>
+
+</html>
